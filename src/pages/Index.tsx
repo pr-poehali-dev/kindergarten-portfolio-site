@@ -95,22 +95,16 @@ const Index = () => {
       color: 'bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A]',
     },
     {
-      icon: 'BookOpen',
-      title: 'Публикации',
-      description: 'Более 15 методических разработок',
-      color: 'bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3]',
-    },
-    {
       icon: 'Users',
       title: 'Опыт работы',
       description: '3 года инструктором по физической культуре',
-      color: 'bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A]',
+      color: 'bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3]',
     },
     {
       icon: 'Star',
       title: 'Благодарности',
       description: 'Грамоты от родителей и администрации',
-      color: 'bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3]',
+      color: 'bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A]',
     },
   ];
 
