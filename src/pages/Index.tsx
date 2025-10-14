@@ -2,18 +2,30 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(id);
+      setMobileMenuOpen(false);
     }
   };
+
+  const menuItems = [
+    { id: 'home', label: 'Главная' },
+    { id: 'about', label: 'Обо мне' },
+    { id: 'education', label: 'Образование' },
+    { id: 'achievements', label: 'Достижения' },
+    { id: 'portfolio', label: 'Портфолио' },
+    { id: 'contacts', label: 'Контакты' },
+  ];
 
   const portfolioItems = [
     {
@@ -90,14 +102,7 @@ const Index = () => {
               Портфолио педагога
             </h1>
             <div className="hidden md:flex gap-6">
-              {[
-                { id: 'home', label: 'Главная' },
-                { id: 'about', label: 'Обо мне' },
-                { id: 'education', label: 'Образование' },
-                { id: 'achievements', label: 'Достижения' },
-                { id: 'portfolio', label: 'Портфолио' },
-                { id: 'contacts', label: 'Контакты' },
-              ].map((item) => (
+              {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -109,6 +114,31 @@ const Index = () => {
                 </button>
               ))}
             </div>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon" className="text-[#2C3E50]">
+                  <Icon name="Menu" size={24} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col gap-6 mt-8">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-[#FF6B9D] to-[#4ECDC4] bg-clip-text text-transparent mb-4">
+                    Меню
+                  </h2>
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`text-left text-lg font-medium transition-colors hover:text-[#FF6B9D] py-2 ${
+                        activeSection === item.id ? 'text-[#FF6B9D]' : 'text-[#2C3E50]'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>
