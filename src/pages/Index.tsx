@@ -91,7 +91,7 @@ const Index = () => {
     {
       icon: 'Award',
       title: 'Победитель конкурса',
-      description: 'Лучший педагог года 2023',
+      description: 'Молодой и стильный 2023',
       color: 'bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A]',
     },
     {
