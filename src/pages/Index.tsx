@@ -3,11 +3,18 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -26,6 +33,20 @@ const Index = () => {
     { id: 'portfolio', label: 'Портфолио' },
     { id: 'contacts', label: 'Контакты' },
   ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      toast({
+        title: 'Сообщение отправлено!',
+        description: 'Спасибо за обращение. Я свяжусь с вами в ближайшее время.',
+      });
+      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitting(false);
+    }, 1000);
+  };
 
   const portfolioItems = [
     {
@@ -351,57 +372,113 @@ const Index = () => {
       </section>
 
       <section id="contacts" className="py-24 px-4 bg-gradient-to-br from-[#FF6B9D]/10 to-[#4ECDC4]/10">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#2C3E50]">
             Контакты
           </h2>
-          <Card className="border-2 border-[#4ECDC4]/30 shadow-2xl">
-            <CardContent className="p-12">
-              <div className="space-y-8">
-                <div className="flex items-center gap-6">
-                  <div className="p-4 bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A] rounded-2xl">
-                    <Icon name="Mail" className="text-white" size={32} />
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-2 border-[#4ECDC4]/30 shadow-2xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-[#2C3E50] mb-6">Свяжитесь со мной</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A] rounded-xl">
+                      <Icon name="Mail" className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600">Электронная почта</p>
+                      <a
+                        href="mailto:maria.ivanova@example.com"
+                        className="text-lg font-semibold text-[#2C3E50] hover:text-[#FF6B9D] transition-colors"
+                      >
+                        maria.ivanova@example.com
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gray-600 mb-1">Электронная почта</p>
-                    <a
-                      href="mailto:maria.ivanova@example.com"
-                      className="text-xl font-semibold text-[#2C3E50] hover:text-[#FF6B9D] transition-colors"
-                    >
-                      maria.ivanova@example.com
-                    </a>
-                  </div>
-                </div>
 
-                <div className="flex items-center gap-6">
-                  <div className="p-4 bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3] rounded-2xl">
-                    <Icon name="Phone" className="text-white" size={32} />
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3] rounded-xl">
+                      <Icon name="Phone" className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600">Телефон</p>
+                      <a
+                        href="tel:+79001234567"
+                        className="text-lg font-semibold text-[#2C3E50] hover:text-[#4ECDC4] transition-colors"
+                      >
+                        +7 (900) 123-45-67
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gray-600 mb-1">Телефон</p>
-                    <a
-                      href="tel:+79001234567"
-                      className="text-xl font-semibold text-[#2C3E50] hover:text-[#4ECDC4] transition-colors"
-                    >
-                      +7 (900) 123-45-67
-                    </a>
-                  </div>
-                </div>
 
-                <div className="flex items-center gap-6">
-                  <div className="p-4 bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A] rounded-2xl">
-                    <Icon name="MapPin" className="text-white" size={32} />
-                  </div>
-                  <div>
-                    <p className="text-gray-600 mb-1">Место работы</p>
-                    <p className="text-xl font-semibold text-[#2C3E50]">
-                      МБДОУ "Детский сад №123"
-                    </p>
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A] rounded-xl">
+                      <Icon name="MapPin" className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600">Место работы</p>
+                      <p className="text-lg font-semibold text-[#2C3E50]">
+                        МБДОУ "Детский сад №123"
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-[#4ECDC4]/30 shadow-2xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-[#2C3E50] mb-6">Форма обратной связи</h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-[#2C3E50] font-medium">Ваше имя</Label>
+                    <Input
+                      id="name"
+                      placeholder="Введите ваше имя"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      className="border-[#4ECDC4]/30 focus:border-[#FF6B9D]"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-[#2C3E50] font-medium">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      className="border-[#4ECDC4]/30 focus:border-[#FF6B9D]"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-[#2C3E50] font-medium">Сообщение</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Напишите ваше сообщение..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                      rows={5}
+                      className="border-[#4ECDC4]/30 focus:border-[#FF6B9D] resize-none"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-[#FF6B9D] to-[#FFA07A] hover:opacity-90 text-white py-6 text-lg rounded-full"
+                  >
+                    {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
