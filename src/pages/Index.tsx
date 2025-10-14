@@ -171,9 +171,9 @@ const Index = () => {
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <h2 className="text-5xl md:text-6xl font-bold text-[#2C3E50] leading-tight">
-              Добро пожаловать в мой{' '}
+              Добро пожаловать в{' '}
               <span className="bg-gradient-to-r from-[#FF6B9D] to-[#4ECDC4] bg-clip-text text-transparent">
-                мир педагогики
+                мир спорта и здоровья
               </span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
