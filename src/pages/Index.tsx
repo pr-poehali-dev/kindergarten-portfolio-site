@@ -257,25 +257,6 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-[#4ECDC4] shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3] rounded-xl">
-                    <Icon name="BookOpen" className="text-white" size={32} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-[#2C3E50] mb-2">
-                      Профессиональная переподготовка
-                    </h3>
-                    <p className="text-gray-600 mb-2">
-                      Институт повышения квалификации работников образования
-                    </p>
-                    <p className="text-gray-500">2020 • ФГОС дошкольного образования</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
             <Card className="border-l-4 border-l-[#FF6B9D] shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4">
