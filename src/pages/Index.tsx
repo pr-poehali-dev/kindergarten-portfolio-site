@@ -251,7 +251,7 @@ const Index = () => {
                     <p className="text-gray-600 mb-2">
                       Московский университет "РГСУ"
                     </p>
-                    <p className="text-gray-500">Инструктор по ФИЗО</p>
+                    <p className="text-gray-500">2025 г. • Инструктор по ФИЗО</p>
                   </div>
                 </div>
               </CardContent>
