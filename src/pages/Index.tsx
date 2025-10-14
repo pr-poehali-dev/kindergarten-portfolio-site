@@ -91,7 +91,7 @@ const Index = () => {
     {
       icon: 'Award',
       title: 'Победитель конкурса',
-      description: 'Молодой и стильный 2023',
+      description: 'Молодой и стильный 2024',
       color: 'bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A]',
     },
     {
