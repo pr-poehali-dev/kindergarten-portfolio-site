@@ -381,21 +381,6 @@ const Index = () => {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-gradient-to-br from-[#4ECDC4] to-[#44A8B3] rounded-xl">
-                      <Icon name="Phone" className="text-white" size={24} />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Телефон</p>
-                      <a
-                        href="tel:+79001234567"
-                        className="text-lg font-semibold text-[#2C3E50] hover:text-[#4ECDC4] transition-colors"
-                      >
-                        +7 (900) 123-45-67
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
                     <div className="p-3 bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A] rounded-xl">
                       <Icon name="MapPin" className="text-white" size={24} />
                     </div>
