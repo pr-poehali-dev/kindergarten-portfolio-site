@@ -330,7 +330,7 @@ const Index = () => {
             Портфолио
           </h2>
           <p className="text-center text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Галерея детских работ и реализованных проектов
+            Галерея праздников, конкурсов, выступлений
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {portfolioItems.map((item) => (
