@@ -216,7 +216,7 @@ const Index = () => {
             <CardContent className="p-8 md:p-12">
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Меня зовут Мария Иванова, и я уже 12 лет работаю воспитателем в детском саду.
+                  Меня зовут Меренкова Виктория Сергеевна, и я уже 12 лет работаю воспитателем в детском саду.
                   Моя главная цель — создать для каждого ребенка безопасную и развивающую среду,
                   где он может раскрыть свой потенциал.
                 </p>
@@ -388,10 +388,10 @@ const Index = () => {
                     <div>
                       <p className="text-sm text-gray-600">Электронная почта</p>
                       <a
-                        href="mailto:maria.ivanova@example.com"
+                        href="mailto:merenkova.vs@example.com"
                         className="text-lg font-semibold text-[#2C3E50] hover:text-[#FF6B9D] transition-colors"
                       >
-                        maria.ivanova@example.com
+                        merenkova.vs@example.com
                       </a>
                     </div>
                   </div>
