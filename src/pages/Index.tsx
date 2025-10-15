@@ -103,7 +103,7 @@ const Index = () => {
     {
       icon: 'Star',
       title: 'Благодарности',
-      description: 'Грамоты от родителей и администрации',
+      description: 'Доска почета 2025',
       color: 'bg-gradient-to-br from-[#FF6B9D] to-[#FFA07A]',
     },
   ];
